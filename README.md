@@ -25,20 +25,14 @@ $ git add/commit/push
 
 ## 문제
 
-산타 토익에서 예시로 주어진 RC파트 지문 데이터를 그리세요. 가장 선호하시는 기술을 자유롭게 사용해주시기 바랍니다.
+산타 토익에서 예시로 주어진 RC파트 지문 데이터를 그리고 문제를 푸는 UI를 구현하세요. 가장 선호하시는 기술을 자유롭게 사용해주시기 바랍니다.
   - 문제 이해에 도움이 필요하신 경우, 이슈를 생성하여 @vchoisk를 태그해 주시면 24시간 이내로 comment 드리겠습니다. 
 
 ## 예제
 
-토익 RC파트에서 나오는 문단의 형식은 크게 3가지입니다.
+토익 RC파트에서 나오는 문단중 한가지 입니다.
 1. 평문(e-mail, notificaiton, mail, memo) <br />
   <img width="350" alt="exmaple_normal_passage" src="./images/normal_passage.png">
-
-2. 테이블이 포함된 지문 <br />
-  <img width="350" alt="exmaple_table_passage" src="./images/table_passage.png">
-
-3. 대화문 <br />
-  <img width="350" alt="exmaple_dialog_passage" src="./images/dialog_passage.png">
 
 
 ## 보너스
@@ -47,4 +41,4 @@ $ git add/commit/push
 
 1. 뷰와 로직을 분리한다.
 2. 데이터를 읽어서 반환하는 비동기 api를 생성하고 이를 사용한다.
-3. 문제를 풀수있는 UI를 구현한다.
+
