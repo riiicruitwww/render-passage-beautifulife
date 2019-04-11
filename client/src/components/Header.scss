@@ -1,0 +1,24 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 70px;
+  color: #ffffff;
+  background-color: #151515;
+
+  &__title {
+    margin: 0 0 5px 0;
+  }
+
+  &__back-btn {
+    position: absolute;
+    left: 0;
+    padding: 0.5em;
+    margin-left: 1em;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+}
