@@ -1,10 +1,16 @@
 const express = require('express');
+const createError = require('http-errors');
+const task = require('../data/task_container.json');
+
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
+router.get('/:type', (req, res, next) => {
+  if (req.params.type !== task.type) {
+    next(createError(400));
+  }
+
   res.json({
-    message: 'ok'
+    task
   });
 });
 
