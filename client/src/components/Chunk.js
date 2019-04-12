@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './Chunk.scss';
 
 const Chunk = ({ chunk, chunkMap }) => {
@@ -7,8 +7,6 @@ const Chunk = ({ chunk, chunkMap }) => {
     const chunkText = mappedChunk[chunk.type];
     let stringArray = [chunkText];
     let order;
-
-    console.log(typeof chunkText);
 
     if (chunk.children.length) {
       chunk.children.forEach(item => {
@@ -28,17 +26,21 @@ const Chunk = ({ chunk, chunkMap }) => {
     return stringArray.map((string, index) => {
       if (index === 1) {
         return (
-          <span key={index} className="order">
+          <span key={index} className="Chunk order">
             {order}
           </span>
         );
       }
 
-      return <span key={index}>{string}</span>;
+      return (
+        <span key={index} className="Chunk" data-id={chunk.chunk_id}>
+          {string}
+        </span>
+      );
     });
   };
 
-  return <span className="Chunk">{renderChunk()}</span>;
+  return <Fragment>{renderChunk()}</Fragment>;
 };
 
 export default Chunk;

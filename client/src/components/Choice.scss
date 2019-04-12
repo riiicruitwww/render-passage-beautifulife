@@ -1,0 +1,16 @@
+.Choice {
+  display: flex;
+  cursor: pointer;
+
+  &__number {
+    margin-right: 1em;
+  }
+
+  &.selected {
+    color: rgb(240, 40, 40);
+  }
+
+  p {
+    margin-bottom: 0.3em;
+  }
+}

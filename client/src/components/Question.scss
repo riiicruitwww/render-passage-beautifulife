@@ -1,0 +1,14 @@
+.Question {
+  display: flex;
+  margin-bottom: 1em;
+
+  &__order {
+    margin-right: 1em;
+  }
+
+  &__choice-area {
+    p {
+      margin: 0;
+    }
+  }
+}

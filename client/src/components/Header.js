@@ -1,10 +1,13 @@
 import React from 'react';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ packType }) => {
   return (
     <div className="Header">
-      <h1 className="Header__title">Santa Toeic</h1>
+      <div className="Header__title">
+        <h1 >Santa Toeic</h1>
+        <span>{packType && `(${packType})`}</span>
+      </div>
       <button className="Header__back-btn">돌아가기</button>
     </div>
   );

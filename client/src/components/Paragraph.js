@@ -1,12 +1,11 @@
 import React from 'react';
-import './Paragraph.scss';
-import { renderPropertyByName } from './renderPropertyByName';
+import ChunkContainer from '../containers/ChunkContainer';
 
 const Paragraph = ({ paragraph }) => {
   const renderParagraph = () => {
-    return paragraph.children.map((item, index) => {
-      return renderPropertyByName(item, index);
-    });
+    return paragraph.children.map((item, index) => (
+      <ChunkContainer key={index} chunk={item} />
+    ));
   };
 
   return (

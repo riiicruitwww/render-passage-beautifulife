@@ -1,7 +1,8 @@
 import {
   FETCH_TASK_ERROR,
   FETCH_TASK_REQUESTED,
-  FETCH_TASK_SUCCESS
+  FETCH_TASK_SUCCESS,
+  SELECT_ANSWER_EVENT
 } from './actionTypes';
 
 export const fetchTaskError = () => ({
@@ -22,3 +23,9 @@ export const fetchTaskSuccess = (chunkMap, passageBox, questions, type) => ({
   questions,
   packType: type
 });
+
+export const selectAnswerEvent = (questionId, choiceNumber) => ({
+  type: SELECT_ANSWER_EVENT,
+  questionId,
+  choiceNumber
+})

@@ -3,9 +3,7 @@ import Chunk from '../components/Chunk';
 import {} from '../actions';
 
 const mapStateToProps = state => {
-  return {
-    chunkMap: state.chunkMap
-  };
+  return { chunkMap: state.chunkMap };
 };
 
 const mapDispatchToProps = dispatch => {

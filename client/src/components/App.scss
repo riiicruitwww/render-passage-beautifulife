@@ -1,20 +1,15 @@
 .App {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 
   &__body {
+    flex: 1;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    height: calc(100vh - 100px);
-    padding-top: 30px;
-
-    .question-wrapper {
-      display: flex;
-      margin-bottom: 1em;
-
-      .order {
-        margin-right: 1em;
-      }
-    }
+    padding-top: 1.5em;
+    background-color: rgb(16, 16, 16);
   }
 
   @media (max-width: 700px) {

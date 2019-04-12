@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 import './App.scss';
 import Header from './Header';
 import ContentsBox from './ContentsBox';
-import { renderPropertyByName } from './renderPropertyByName';
+import Question from './Question';
+import Passage from './Passage';
+import Paragraph from './Paragraph';
 
 class App extends Component {
   componentDidMount() {
@@ -14,10 +16,12 @@ class App extends Component {
   renderPassgeBox() {
     const { passageBox } = this.props;
 
-    const renderedPassageBox = renderPropertyByName(passageBox.view_tree);
-    const renderedPassages = passageBox.passages.map((passage, index) => {
-      return renderPropertyByName(passage.view_tree, index);
-    });
+    const renderedPassageBox = passageBox.view_tree.children.map(
+      (item, index) => <Paragraph key={index} paragraph={item} />
+    );
+    const renderedPassages = passageBox.passages.map((passage, index) => (
+      <Passage key={index} passage={passage} />
+    ));
 
     return (
       <Fragment>
@@ -30,14 +34,9 @@ class App extends Component {
   renderQuestions() {
     const { questions } = this.props;
 
-    return questions.map((question, index) => {
-      return (
-        <div key={index} className="question-wrapper">
-          <span className="order">{question.order + 1}.</span>
-          {renderPropertyByName(question.view_tree, index)}
-        </div>
-      );
-    });
+    return questions.map((question, index) => (
+      <Question key={index} question={question} />
+    ));
   }
 
   render() {
@@ -45,11 +44,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <Header packType={packType} />
         {packType && (
           <div className="App__body">
             <ContentsBox>{this.renderPassgeBox()}</ContentsBox>
-            <ContentsBox>{this.renderQuestions()}</ContentsBox>
+            <ContentsBox>
+              <p>Questions</p>
+              {this.renderQuestions()}
+            </ContentsBox>
           </div>
         )}
       </div>
