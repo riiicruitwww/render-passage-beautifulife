@@ -8,10 +8,7 @@ import reducer from './reducers';
 import './index.scss';
 import AppContainer from './containers/AppContainer';
 
-const store = createStore(
-  reducer,
-  compose(applyMiddleware(logger))
-);
+const store = createStore(reducer, compose(applyMiddleware(logger)));
 
 ReactDOM.render(
   <Provider store={store}>

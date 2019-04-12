@@ -3,14 +3,24 @@
 
   &__body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 100px);
+    padding-top: 30px;
+
+    .question-wrapper {
+      display: flex;
+      margin-bottom: 1em;
+
+      .order {
+        margin-right: 1em;
+      }
+    }
   }
 
   @media (max-width: 700px) {
     &__body {
       flex-direction: column;
+      padding-top: 0px;
     }
   }
 }

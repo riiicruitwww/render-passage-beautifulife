@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.scss';
 import Header from './Header';
-import PassageBox from './PassageBox';
-import QuestionBox from './QuestionBox';
+import ContentsBox from './ContentsBox';
+import { renderPropertyByName } from './renderPropertyByName';
 
 class App extends Component {
   componentDidMount() {
@@ -11,24 +11,45 @@ class App extends Component {
     onInit();
   }
 
+  renderPassgeBox() {
+    const { passageBox } = this.props;
+
+    const renderedPassageBox = renderPropertyByName(passageBox.view_tree);
+    const renderedPassages = passageBox.passages.map((passage, index) => {
+      return renderPropertyByName(passage.view_tree, index);
+    });
+
+    return (
+      <Fragment>
+        {renderedPassageBox}
+        {renderedPassages}
+      </Fragment>
+    );
+  }
+
+  renderQuestions() {
+    const { questions } = this.props;
+
+    return questions.map((question, index) => {
+      return (
+        <div key={index} className="question-wrapper">
+          <span className="order">{question.order + 1}.</span>
+          {renderPropertyByName(question.view_tree, index)}
+        </div>
+      );
+    });
+  }
+
   render() {
-    const { chunkMap, packType, passageBox, questions } = this.props;
+    const { packType } = this.props;
 
     return (
       <div className="App">
         <Header />
         {packType && (
           <div className="App__body">
-            <PassageBox
-              chunkMap={chunkMap}
-              passageBox={passageBox}
-              questions={questions}
-            />
-            <QuestionBox
-              chunkMap={chunkMap}
-              passageBox={passageBox}
-              questions={questions}
-            />
+            <ContentsBox>{this.renderPassgeBox()}</ContentsBox>
+            <ContentsBox>{this.renderQuestions()}</ContentsBox>
           </div>
         )}
       </div>

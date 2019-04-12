@@ -5,7 +5,10 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  isLoading: false
+  isLoading: false,
+  chunkMap: {},
+  passageBox: [],
+  questions: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,9 +22,9 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         isLoading: action.isLoading,
         packType: action.packType,
-        questions: action.questions,
+        chunkMap: action.chunkMap,
         passageBox: action.passageBox,
-        chunkMap: action.chunkMap
+        questions: action.questions
       });
     default:
       return state;

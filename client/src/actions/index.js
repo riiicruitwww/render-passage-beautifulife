@@ -14,16 +14,11 @@ export const fetchTaskRequested = () => ({
   isLoading: true
 });
 
-export const fetchTaskSuccess = (
-  type,
-  questions,
-  passageBox,
-  chunkMap
-) => ({
+export const fetchTaskSuccess = (chunkMap, passageBox, questions, type) => ({
   type: FETCH_TASK_SUCCESS,
   isLoading: false,
-  packType: type,
-  questions,
+  chunkMap,
   passageBox,
-  chunkMap
+  questions,
+  packType: type
 });

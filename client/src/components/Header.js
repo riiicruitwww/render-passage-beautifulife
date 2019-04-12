@@ -7,7 +7,7 @@ const Header = () => {
       <h1 className="Header__title">Santa Toeic</h1>
       <button className="Header__back-btn">돌아가기</button>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

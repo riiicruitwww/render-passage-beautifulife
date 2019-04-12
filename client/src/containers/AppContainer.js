@@ -29,10 +29,10 @@ const mapDispatchToProps = dispatch => {
 
         dispatch(
           fetchTaskSuccess(
-            response.task.type,
-            response.task.questions,
+            response.task.chunk_map,
             response.task.passage_box,
-            response.task.chunk_map
+            response.task.questions,
+            response.task.type
           )
         );
       } catch (err) {
