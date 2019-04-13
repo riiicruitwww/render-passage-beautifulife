@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import './App.scss';
-import Header from './Header';
 import ContentsBox from './ContentsBox';
-import Question from './Question';
-import Passage from './Passage';
-import Paragraph from './Paragraph';
 import Divider from './Divider';
+import Header from './Header';
+import Loader from './Loader';
+import Paragraph from './Paragraph';
+import Passage from './Passage';
+import Question from './Question';
 import Vocabulary from './Vocabulary';
 
 class App extends Component {
@@ -70,6 +71,7 @@ class App extends Component {
     const {
       isAnswerComplete,
       isCheckComplete,
+      isLoading,
       packType,
       onCheckClick,
       onNextClick,
@@ -107,6 +109,7 @@ class App extends Component {
             </Fragment>
           )}
         </div>
+        {isLoading && <Loader />}
       </div>
     );
   }
