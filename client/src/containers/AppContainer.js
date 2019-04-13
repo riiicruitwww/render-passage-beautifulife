@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import App from '../components/App';
 import {
-  answersCheck,
+  checkAnswers,
   fetchTaskError,
   fetchTaskRequested,
   fetchTaskSuccess,
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, { history }) => {
       try {
         dispatch(fetchTaskRequested());
 
-        let response = await fetch(`http://localhost:80/api/v1${path}`, {
+        let response = await fetch(`/api/v1${path}`, {
           mode: 'cors'
         });
 
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch, { history }) => {
       }
     },
     onCheckClick: () => {
-      dispatch(answersCheck());
+      dispatch(checkAnswers());
     },
     onNextClick: () => {
       dispatch(initializeApplication());

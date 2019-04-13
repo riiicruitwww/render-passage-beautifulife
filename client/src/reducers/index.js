@@ -1,5 +1,5 @@
 import {
-  ANSWERS_CHECK,
+  CHECK_ANSWERS,
   FETCH_TASK_ERROR,
   FETCH_TASK_REQUESTED,
   FETCH_TASK_SUCCESS,
@@ -8,7 +8,7 @@ import {
   SELECT_ANSWER_EVENT
 } from '../actions/actionTypes';
 
-const initialState = {
+export const initialState = {
   isAnswerComplete: false,
   isCheckComplete: false,
   isLoading: false,
@@ -22,7 +22,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ANSWERS_CHECK:
+    case CHECK_ANSWERS:
       const checkResult = {};
 
       state.questions.forEach(question => {

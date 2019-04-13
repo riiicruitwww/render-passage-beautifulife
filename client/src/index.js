@@ -30,7 +30,11 @@ ReactDOM.render(
       <Switch>
         <Redirect exact from="/" to="/santa/toeic-part6" />
         <Route exact path="/santa/:type" component={AppContainer} />
-        <Route exact path="/santa/question/:questionId" component={AppContainer} />
+        <Route
+          exact
+          path="/santa/question/:questionId"
+          component={AppContainer}
+        />
         <Route component={NotFound} />
       </Switch>
     </ConnectedRouter>

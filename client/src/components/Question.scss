@@ -3,7 +3,8 @@
   margin-bottom: 1em;
 
   &__order {
-    margin-right: 1em;
+    position: relative;
+    margin-right: 2em;
 
     &.correct {
       color: blue;
@@ -12,11 +13,14 @@
     &.wrong {
       color: red;
     }
+
+    .icon {
+      position: absolute;
+      left: 1em;
+    }
   }
 
-  &__choice-area {
-    p {
-      margin: 0;
-    }
+  &__choice-area > p {
+    margin: 0;
   }
 }

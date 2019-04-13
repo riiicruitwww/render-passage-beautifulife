@@ -1,5 +1,5 @@
 import {
-  ANSWERS_CHECK,
+  CHECK_ANSWERS,
   FETCH_TASK_ERROR,
   FETCH_TASK_REQUESTED,
   FETCH_TASK_SUCCESS,
@@ -8,8 +8,8 @@ import {
   SELECT_ANSWER_EVENT
 } from './actionTypes';
 
-export const answersCheck = () => ({
-  type: ANSWERS_CHECK,
+export const checkAnswers = () => ({
+  type: CHECK_ANSWERS,
   isCheckComplete: true
 });
 

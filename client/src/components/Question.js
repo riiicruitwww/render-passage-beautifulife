@@ -2,19 +2,21 @@ import React from 'react';
 import './Question.scss';
 import WithRenderPropertyByName from './WithRenderPropertyByName';
 
-const Question = ({ checkResult, isCheckComplete, question }) => {
+const Question = ({ questionType, question }) => {
   return (
     <div className="Question">
-      <span
-        className={
-          isCheckComplete
-            ? checkResult[question.id].result
-              ? 'Question__order correct'
-              : 'Question__order wrong'
-            : 'Question__order'
-        }
-      >
+      <span className={`Question__order ${questionType}`}>
         {question.order + 1}.
+        {questionType === 'answer' ? (
+          <span className="icon">
+            <i className="fas fa-check-circle" />
+          </span>
+        ) : null}
+        {questionType === 'wrong' ? (
+          <span className="icon">
+            <i className="fas fa-times-circle" />
+          </span>
+        ) : null}
       </span>
       <div className="Question__choice-area">
         <WithRenderPropertyByName

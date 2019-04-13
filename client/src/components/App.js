@@ -6,7 +6,7 @@ import Header from './Header';
 import Loader from './Loader';
 import Paragraph from './Paragraph';
 import Passage from './Passage';
-import Question from './Question';
+import QuestionContainer from '../containers/QuestionContainer';
 import Vocabulary from './Vocabulary';
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
   renderPassgeBox() {
     const { passageBox } = this.props;
 
-    const renderPassageBox = () => {
+    const renderPassageBoxParagraph = () => {
       return passageBox.view_tree.children.map((item, index) => (
         <Paragraph key={index} paragraph={item} />
       ));
@@ -32,7 +32,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        {renderPassageBox()}
+        {renderPassageBoxParagraph()}
         {renderPassages()}
       </Fragment>
     );
@@ -55,15 +55,10 @@ class App extends Component {
   }
 
   renderQuestions() {
-    const { checkResult, isCheckComplete, questions } = this.props;
+    const { questions } = this.props;
 
     return questions.map((question, index) => (
-      <Question
-        key={index}
-        checkResult={checkResult}
-        isCheckComplete={isCheckComplete}
-        question={question}
-      />
+      <QuestionContainer key={index} question={question} />
     ));
   }
 

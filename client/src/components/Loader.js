@@ -7,7 +7,7 @@ const Loader = () => {
       <div className="Loader__circle1" />
       <div className="Loader__circle2" />
     </div>
-  )
-}
+  );
+};
 
 export default Loader;

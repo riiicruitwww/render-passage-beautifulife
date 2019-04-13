@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/:type', (req, res, next) => {
   if (req.params.type !== task.type) {
-    next(createError(400));
+    return next(createError(400));
   }
 
   res.json({

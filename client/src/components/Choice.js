@@ -3,26 +3,14 @@ import './Choice.scss';
 import Paragraph from './Paragraph';
 
 const Choice = ({
-  checkResult,
   choice,
-  isCheckComplete,
+  choiceType,
+  number,
   questionId,
   questionsLength,
   userAnswer,
   onClickChoice
 }) => {
-  const number = String.fromCharCode(97 + choice.number);
-  const isSelected = userAnswer[questionId] === number;
-  let choiceType = isSelected ? 'selected' : '';
-
-  if (isCheckComplete) {
-    if (checkResult[questionId].correctAnswer === number) {
-      choiceType = 'answer';
-    } else if (isSelected) {
-      choiceType = 'wrong';
-    }
-  }
-
   const handleChoiceClick = (choiceNumber, ev) => {
     onClickChoice(questionId, choiceNumber, questionsLength, userAnswer);
   };
@@ -36,7 +24,7 @@ const Choice = ({
   return (
     <div
       className={`Choice ${choiceType}`}
-      onClick={handleChoiceClick.bind(this, number)}
+      onClick={handleChoiceClick.bind(null, number)}
     >
       <span className="Choice__number">{`(${number})`}</span>
       {renderChoice()}

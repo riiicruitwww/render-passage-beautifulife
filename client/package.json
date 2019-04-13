@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.3.2",
-    "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -32,6 +31,8 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
+    "node-sass": "^4.11.0",
     "redux-logger": "^3.0.6"
-  }
+  },
+  "proxy": "http://localhost:80"
 }
