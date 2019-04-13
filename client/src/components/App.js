@@ -5,55 +5,108 @@ import ContentsBox from './ContentsBox';
 import Question from './Question';
 import Passage from './Passage';
 import Paragraph from './Paragraph';
+import Divider from './Divider';
+import Vocabulary from './Vocabulary';
 
 class App extends Component {
   componentDidMount() {
-    const { onInit } = this.props;
+    const { location, onInit } = this.props;
 
-    onInit();
+    onInit(location.pathname);
   }
 
   renderPassgeBox() {
     const { passageBox } = this.props;
 
-    const renderedPassageBox = passageBox.view_tree.children.map(
-      (item, index) => <Paragraph key={index} paragraph={item} />
-    );
-    const renderedPassages = passageBox.passages.map((passage, index) => (
-      <Passage key={index} passage={passage} />
-    ));
+    const renderPassageBox = () => {
+      return passageBox.view_tree.children.map((item, index) => (
+        <Paragraph key={index} paragraph={item} />
+      ));
+    };
+    const renderPassages = () => {
+      return passageBox.passages.map((passage, index) => (
+        <Passage key={index} passage={passage} />
+      ));
+    };
 
     return (
       <Fragment>
-        {renderedPassageBox}
-        {renderedPassages}
+        {renderPassageBox()}
+        {renderPassages()}
       </Fragment>
     );
   }
 
+  renderPassageTranslations() {
+    const { passageBox } = this.props;
+
+    return passageBox.passage_translations.map((passage, index) => (
+      <Passage key={index} passage={passage} />
+    ));
+  }
+
+  renderVocabularies() {
+    const { passageBox } = this.props;
+
+    return passageBox.vocabularies.map((vocabulary, index) => (
+      <Vocabulary key={index} vocabulary={vocabulary} />
+    ));
+  }
+
   renderQuestions() {
-    const { questions } = this.props;
+    const { checkResult, isCheckComplete, questions } = this.props;
 
     return questions.map((question, index) => (
-      <Question key={index} question={question} />
+      <Question
+        key={index}
+        checkResult={checkResult}
+        isCheckComplete={isCheckComplete}
+        question={question}
+      />
     ));
   }
 
   render() {
-    const { packType } = this.props;
+    const {
+      isAnswerComplete,
+      isCheckComplete,
+      packType,
+      onCheckClick,
+      onNextClick,
+      onHomeClick
+    } = this.props;
 
     return (
       <div className="App">
-        <Header packType={packType} />
-        {packType && (
-          <div className="App__body">
-            <ContentsBox>{this.renderPassgeBox()}</ContentsBox>
-            <ContentsBox>
-              <p>Questions</p>
-              {this.renderQuestions()}
-            </ContentsBox>
-          </div>
-        )}
+        <Header
+          isAnswerComplete={isAnswerComplete}
+          isCheckComplete={isCheckComplete}
+          packType={packType}
+          onCheckClick={onCheckClick}
+          onNextClick={onNextClick}
+          onHomeClick={onHomeClick}
+        />
+        <div className="App__body">
+          {packType && (
+            <Fragment>
+              <ContentsBox>{this.renderPassgeBox()}</ContentsBox>
+              <ContentsBox>
+                <p>&#8226;&nbsp;&nbsp;Questions</p>
+                {this.renderQuestions()}
+                {isCheckComplete && (
+                  <Fragment>
+                    <Divider />
+                    <p>&#8226;&nbsp;&nbsp;해석</p>
+                    {this.renderPassageTranslations()}
+                    <Divider />
+                    <p>&#8226;&nbsp;&nbsp;단어</p>
+                    {this.renderVocabularies()}
+                  </Fragment>
+                )}
+              </ContentsBox>
+            </Fragment>
+          )}
+        </div>
       </div>
     );
   }

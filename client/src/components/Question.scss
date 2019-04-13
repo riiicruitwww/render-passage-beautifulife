@@ -4,6 +4,14 @@
 
   &__order {
     margin-right: 1em;
+
+    &.correct {
+      color: blue;
+    }
+
+    &.wrong {
+      color: red;
+    }
   }
 
   &__choice-area {

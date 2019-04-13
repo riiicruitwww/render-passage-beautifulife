@@ -23,15 +23,48 @@
     }
   }
 
-  &__back-btn {
+  button {
     position: absolute;
-    left: 0;
-    margin-left: 1em;
     padding: 0.5em;
     border: 1px solid;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #b9b9b9;
+    transition: all 0.3s;
+  }
+
+  &__back-btn {
+    left: 0;
+    margin-left: 1em;
+    color: #e0e0e0;
+    opacity: 0.7;
     cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__utility-btn {
+    right: 0;
+    margin-right: 1em;
+    color: #474747;
+    cursor: not-allowed;
+
+    &.active {
+      box-sizing: content-box;
+      border-color: #151515;
+      color: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgb(239, 94, 128) 0%,
+        rgb(81, 159, 229)
+      );
+      opacity: 0.9;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

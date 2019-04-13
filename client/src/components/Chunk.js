@@ -10,21 +10,20 @@ const Chunk = ({ chunk, chunkMap }) => {
 
     if (chunk.children.length) {
       chunk.children.forEach(item => {
-        if (item.name === 'segment') {
+        if (item.data.styles[0] === 'blank') {
           const { begin, offset } = item.data;
+          order = `----${item.order}----`;
           stringArray = [
             chunkText.substring(0, begin),
-            chunkText.substring(begin, begin + offset),
+            { order },
             chunkText.substring(begin + offset)
           ];
-
-          order = `----${item.order}----`;
         }
       });
     }
 
     return stringArray.map((string, index) => {
-      if (index === 1) {
+      if (string.order) {
         return (
           <span key={index} className="Chunk order">
             {order}

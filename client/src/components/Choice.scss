@@ -1,9 +1,20 @@
 .Choice {
   display: flex;
+  transition: all 0.3s;
   cursor: pointer;
 
   &__number {
     margin-right: 1em;
+  }
+
+  &.answer {
+    color: blue;
+  }
+
+  &.wrong {
+    color: rgb(240, 40, 40);
+    text-decoration: line-through;
+
   }
 
   &.selected {

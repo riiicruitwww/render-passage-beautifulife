@@ -2,12 +2,29 @@ import React from 'react';
 import './Choice.scss';
 import Paragraph from './Paragraph';
 
-const Choice = ({ choice, questionId, userAnswer, onClickChoice }) => {
-  const number = `(${String.fromCharCode(97 + choice.number)})`;
-  const isSelected = userAnswer[questionId] === choice.number;
+const Choice = ({
+  checkResult,
+  choice,
+  isCheckComplete,
+  questionId,
+  questionsLength,
+  userAnswer,
+  onClickChoice
+}) => {
+  const number = String.fromCharCode(97 + choice.number);
+  const isSelected = userAnswer[questionId] === number;
+  let choiceType = isSelected ? 'selected' : '';
+
+  if (isCheckComplete) {
+    if (checkResult[questionId].correctAnswer === number) {
+      choiceType = 'answer';
+    } else if (isSelected) {
+      choiceType = 'wrong';
+    }
+  }
 
   const handleChoiceClick = (choiceNumber, ev) => {
-    onClickChoice(questionId, choiceNumber);
+    onClickChoice(questionId, choiceNumber, questionsLength, userAnswer);
   };
 
   const renderChoice = () => {
@@ -18,10 +35,10 @@ const Choice = ({ choice, questionId, userAnswer, onClickChoice }) => {
 
   return (
     <div
-      className={isSelected ? 'Choice selected' : 'Choice'}
-      onClick={handleChoiceClick.bind(this, choice.number)}
+      className={`Choice ${choiceType}`}
+      onClick={handleChoiceClick.bind(this, number)}
     >
-      <span className="Choice__number">{number}</span>
+      <span className="Choice__number">{`(${number})`}</span>
       {renderChoice()}
     </div>
   );
