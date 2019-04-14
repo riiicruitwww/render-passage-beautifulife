@@ -13,7 +13,7 @@ import {
 import reducer from './reducers';
 import './index.scss';
 import AppContainer from './containers/AppContainer';
-import NotFound from './components/NotFound';
+import NotFound from './components/NotFound/NotFound';
 
 const history = createBrowserHistory();
 const store = createStore(

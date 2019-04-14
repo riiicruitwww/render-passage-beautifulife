@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import App from '../components/App';
+import App from '../components/App/App';
 import {
   checkAnswers,
   fetchTaskError,

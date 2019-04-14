@@ -1,6 +1,6 @@
 import React from 'react';
 import './Passage.scss';
-import WithRenderPropertyByName from './WithRenderPropertyByName';
+import WithRenderPropertyByName from '../WithRenderPropertyByName/WithRenderPropertyByName';
 
 const Passage = ({ passage }) => {
   return (

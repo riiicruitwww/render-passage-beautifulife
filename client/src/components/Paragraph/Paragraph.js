@@ -1,5 +1,5 @@
 import React from 'react';
-import ChunkContainer from '../containers/ChunkContainer';
+import ChunkContainer from '../../containers/ChunkContainer';
 
 const Paragraph = ({ paragraph }) => {
   const renderParagraph = () => {

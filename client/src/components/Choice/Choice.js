@@ -1,6 +1,6 @@
 import React from 'react';
 import './Choice.scss';
-import Paragraph from './Paragraph';
+import Paragraph from '../Paragraph/Paragraph';
 
 const Choice = ({
   choice,

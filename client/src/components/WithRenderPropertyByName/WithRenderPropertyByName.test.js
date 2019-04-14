@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import WithRenderPropertyByName from './WithRenderPropertyByName';
-import ChoiceContainer from '../containers/ChoiceContainer';
-import Paragraph from './Paragraph';
+import ChoiceContainer from '../../containers/ChoiceContainer';
+import Paragraph from '../Paragraph/Paragraph';
 
 describe('Header', () => {
   describe('about render', () => {

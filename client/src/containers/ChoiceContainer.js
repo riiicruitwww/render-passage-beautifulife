@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Choice from '../components/Choice';
+import Choice from '../components/Choice/Choice';
 import { selectAnswerComplete, selectAnswerEvent } from '../actions';
 
 const mapStateToProps = (state, { choice, questionId }) => {

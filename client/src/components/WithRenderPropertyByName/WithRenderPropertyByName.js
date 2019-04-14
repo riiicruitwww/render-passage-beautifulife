@@ -1,6 +1,6 @@
 import React from 'react';
-import ChoiceContainer from '../containers/ChoiceContainer';
-import Paragraph from './Paragraph';
+import ChoiceContainer from '../../containers/ChoiceContainer';
+import Paragraph from '../Paragraph/Paragraph';
 
 const WithRenderPropertyByName = ({ property, questionId }) => {
   const renderPropertyByName = (property, index) => {
