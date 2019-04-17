@@ -16,12 +16,17 @@ import AppContainer from './containers/AppContainer';
 import NotFound from './components/NotFound/NotFound';
 
 const history = createBrowserHistory();
+const middlewares =
+  process.env.NODE_ENV === 'development'
+    ? [routerMiddleware(history), logger]
+    : [routerMiddleware(history)];
+
 const store = createStore(
   combineReducers({
     reducer,
     router: connectRouter(history)
   }),
-  compose(applyMiddleware(routerMiddleware(history), logger))
+  compose(applyMiddleware(...middlewares))
 );
 
 ReactDOM.render(
