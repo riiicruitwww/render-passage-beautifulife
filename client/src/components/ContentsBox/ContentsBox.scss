@@ -2,11 +2,10 @@
   flex: 1;
   overflow: auto;
   max-width: 600px;
-  max-height: calc(100vh - 110px - 6em);
-  margin: 1.5em;
-  padding: 1em 1.5em;
-  padding-bottom: 0;
-  border: 1px solid black;
+  max-height: calc(100vh - 206px);
+  margin: 24px;
+  padding: 16px 24px 0 24px;
+  border: 1px solid #000000;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }

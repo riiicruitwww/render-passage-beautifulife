@@ -1,12 +1,12 @@
 .Vocabulary {
   display: inline-block;
-  margin: 0 4rem 1rem 0;
+  margin: 0 64px 16px 0;
 
   &__word {
     color: rgba(0, 0, 0, 0.9);
   }
 
   &__meaning {
-    margin-left: 0.5rem;
+    margin-left: 8px;
   }
 }

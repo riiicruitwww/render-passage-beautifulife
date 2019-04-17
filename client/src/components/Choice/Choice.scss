@@ -4,23 +4,22 @@
   cursor: pointer;
 
   &__number {
-    margin-right: 1em;
+    margin-right: 16px;
   }
 
   &.answer {
-    color: blue;
+    color: #0000ff;
   }
 
   &.wrong {
-    color: rgb(240, 40, 40);
-    text-decoration: line-through;
+    color: #f02828;
   }
 
   &.selected {
-    color: rgb(240, 40, 40);
+    color: #f02828;
   }
 
   p {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.3rem;
   }
 }

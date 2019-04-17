@@ -25,7 +25,7 @@
 
   button {
     position: absolute;
-    padding: 0.5em;
+    padding: 8px;
     border: 1px solid;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -34,7 +34,7 @@
 
   &__back-btn {
     left: 0;
-    margin-left: 1em;
+    margin-left: 16px;
     color: #e0e0e0;
     opacity: 0.7;
     cursor: pointer;
@@ -46,19 +46,15 @@
 
   &__utility-btn {
     right: 0;
-    margin-right: 1em;
+    margin-right: 16px;
     color: #474747;
     cursor: not-allowed;
 
     &.active {
       box-sizing: content-box;
       border-color: #151515;
-      color: rgb(255, 255, 255);
-      background: linear-gradient(
-        90deg,
-        rgb(239, 94, 128) 0%,
-        rgb(81, 159, 229)
-      );
+      color: #ffffff;
+      background: linear-gradient(90deg, #ef5e80 0%, #519fe5);
       opacity: 0.9;
       cursor: pointer;
 
