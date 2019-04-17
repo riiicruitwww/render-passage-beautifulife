@@ -16,7 +16,7 @@ class App extends Component {
     onInit(location.pathname);
   }
 
-  renderPassgeBox() {
+  renderPassageBox() {
     const { passageBox } = this.props;
 
     const renderPassageBoxParagraph = () => {
@@ -86,7 +86,7 @@ class App extends Component {
         <div className="App__body">
           {packType && (
             <Fragment>
-              <ContentsBox>{this.renderPassgeBox()}</ContentsBox>
+              <ContentsBox>{this.renderPassageBox()}</ContentsBox>
               <ContentsBox>
                 <p>&#8226;&nbsp;&nbsp;Questions</p>
                 {this.renderQuestions()}

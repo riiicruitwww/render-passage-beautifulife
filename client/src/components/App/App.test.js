@@ -4,7 +4,7 @@ import App from './App';
 import Loader from '../Loader/Loader';
 import ContentsBox from '../ContentsBox/ContentsBox';
 
-App.prototype.renderPassgeBox = jest.fn();
+App.prototype.renderPassageBox = jest.fn();
 App.prototype.renderPassageTranslations = jest.fn();
 App.prototype.renderQuestions = jest.fn();
 App.prototype.renderVocabularies = jest.fn();
