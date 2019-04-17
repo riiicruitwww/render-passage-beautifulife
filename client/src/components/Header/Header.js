@@ -27,7 +27,7 @@ const Header = ({
     <div className="Header">
       <div className="Header__title">
         <h1 onClick={handleLogoClick}>Santa Toeic</h1>
-        <span>{packType ? `(${packType})` : '...Loading'}</span>
+        <span>{`(${packType || '...Loading'})`}</span>
       </div>
       <button className="Header__back-btn">돌아가기</button>
       {isCheckComplete ? (
@@ -39,11 +39,7 @@ const Header = ({
         </button>
       ) : (
         <button
-          className={
-            isAnswerComplete
-              ? 'Header__utility-btn active'
-              : 'Header__utility-btn'
-          }
+          className={`Header__utility-btn ${isAnswerComplete ? 'active' : ''}`}
           onClick={handleCheckClick}
           disabled={!isAnswerComplete}
         >

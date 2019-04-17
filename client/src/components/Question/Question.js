@@ -2,27 +2,24 @@ import React from 'react';
 import './Question.scss';
 import WithRenderPropertyByName from '../WithRenderPropertyByName/WithRenderPropertyByName';
 
-const Question = ({ questionType, question }) => {
+const Question = ({ questionType, question: { id, order, view_tree } }) => {
   return (
     <div className="Question">
       <span className={`Question__order ${questionType}`}>
-        {question.order + 1}.
-        {questionType === 'correct' ? (
+        {order + 1}.
+        {questionType === 'correct' && (
           <span className="icon">
             <i className="fas fa-check-circle" />
           </span>
-        ) : null}
-        {questionType === 'wrong' ? (
+        )}
+        {questionType === 'wrong' && (
           <span className="icon">
             <i className="fas fa-times-circle" />
           </span>
-        ) : null}
+        )}
       </span>
       <div className="Question__choice-area">
-        <WithRenderPropertyByName
-          property={question.view_tree}
-          questionId={question.id}
-        />
+        <WithRenderPropertyByName property={view_tree} questionId={id} />
       </div>
     </div>
   );

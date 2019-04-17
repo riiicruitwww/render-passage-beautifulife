@@ -25,15 +25,11 @@ const mapStateToProps = (state, { choice, questionId }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClickChoice: (questionId, choiceNumber, questionsLength, userAnswer) => {
+    onComplete: () => {
+      dispatch(selectAnswerComplete());
+    },
+    onSelect: (questionId, choiceNumber) => {
       dispatch(selectAnswerEvent(questionId, choiceNumber));
-
-      if (
-        questionsLength === Object.keys(userAnswer).length + 1 &&
-        !userAnswer[questionId]
-      ) {
-        dispatch(selectAnswerComplete());
-      }
     }
   };
 };

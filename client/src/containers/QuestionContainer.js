@@ -3,24 +3,12 @@ import Question from '../components/Question/Question';
 
 const mapStateToProps = (state, { question }) => {
   const { checkResult, isCheckComplete } = state.reducer;
-  let questionType;
-
-  if (isCheckComplete) {
-    if (checkResult[question.id].result) {
-      questionType = 'correct';
-    } else {
-      questionType = 'wrong';
-    }
-  } else {
-    questionType = '';
-  }
+  const questionType = !isCheckComplete ? '' : 
+    checkResult[question.id].isCorrect ? 'correct' : 'wrong';
 
   return {
     questionType
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(Question);
+export default connect(mapStateToProps)(Question);

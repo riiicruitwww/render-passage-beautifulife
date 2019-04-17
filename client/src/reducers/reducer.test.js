@@ -38,7 +38,7 @@ describe('reducer validate', () => {
 
       expect(result.isCheckComplete).toBe(action.isCheckComplete);
       expect(result.checkResult.test).toEqual({
-        result: true,
+        isCorrect: true,
         correctAnswer: 'test'
       });
     });

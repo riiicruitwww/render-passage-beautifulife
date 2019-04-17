@@ -9,10 +9,18 @@ const Choice = ({
   questionId,
   questionsLength,
   userAnswer,
-  onClickChoice
+  onComplete,
+  onSelect
 }) => {
-  const handleChoiceClick = (choiceNumber, ev) => {
-    onClickChoice(questionId, choiceNumber, questionsLength, userAnswer);
+  const handleChoiceClick = choiceNumber => {
+    onSelect(questionId, choiceNumber);
+
+    if (
+      questionsLength === Object.keys(userAnswer).length + 1 &&
+      !userAnswer[questionId]
+    ) {
+      onComplete();
+    }
   };
 
   const renderChoice = () => {

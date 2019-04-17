@@ -26,10 +26,10 @@ const reducer = (state = initialState, action) => {
       const checkResult = {};
 
       state.questions.forEach(question => {
-        const result =
+        const isCorrect =
           question.correct_answer === state.userAnswer[question.id];
         checkResult[question.id] = {
-          result,
+          isCorrect,
           correctAnswer: question.correct_answer
         };
       });

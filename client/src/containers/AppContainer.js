@@ -32,14 +32,9 @@ const mapDispatchToProps = (dispatch, { history }) => {
 
         response = await response.json();
 
-        dispatch(
-          fetchTaskSuccess(
-            response.task.chunk_map,
-            response.task.passage_box,
-            response.task.questions,
-            response.task.type
-          )
-        );
+        const { chunk_map, passage_box, questions, type } = response.task;
+
+        dispatch(fetchTaskSuccess(chunk_map, passage_box, questions, type));
       } catch (err) {
         dispatch(fetchTaskError());
         console.error(err.message);

@@ -1,21 +1,20 @@
 import React, { Fragment } from 'react';
 import './Chunk.scss';
 
-const Chunk = ({ chunk, chunkMap }) => {
+const Chunk = ({ chunk: { children, chunk_id, type }, chunkMap }) => {
   const renderChunk = () => {
-    const mappedChunk = chunkMap[chunk.chunk_id];
-    const chunkText = mappedChunk[chunk.type];
+    const mappedChunk = chunkMap[chunk_id];
+    const chunkText = mappedChunk[type];
     let stringArray = [chunkText];
-    let order;
 
-    if (chunk.children.length) {
-      chunk.children.forEach(item => {
+    if (children.length !== 0) {
+      children.forEach(item => {
         if (item.data.styles[0] === 'blank') {
           const { begin, offset } = item.data;
-          order = `----${item.order}----`;
+          const order = `----${item.order}----`;
           stringArray = [
             chunkText.substring(0, begin),
-            { order },
+            order,
             chunkText.substring(begin + offset)
           ];
         }
@@ -23,16 +22,12 @@ const Chunk = ({ chunk, chunkMap }) => {
     }
 
     return stringArray.map((string, index) => {
-      if (string.order) {
-        return (
-          <span key={index} className="Chunk order">
-            {order}
-          </span>
-        );
-      }
-
       return (
-        <span key={index} className="Chunk" data-id={chunk.chunk_id}>
+        <span
+          key={index}
+          className={`Chunk ${index === 1 ? 'order' : ''}`}
+          data-id={chunk_id}
+        >
           {string}
         </span>
       );

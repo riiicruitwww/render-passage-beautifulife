@@ -17,15 +17,16 @@ class App extends Component {
   }
 
   renderPassageBox() {
-    const { passageBox } = this.props;
+    const { passageBox: { passages, view_tree } } = this.props;
 
     const renderPassageBoxParagraph = () => {
-      return passageBox.view_tree.children.map((item, index) => (
+      return view_tree.children.map((item, index) => (
         <Paragraph key={index} paragraph={item} />
       ));
     };
+
     const renderPassages = () => {
-      return passageBox.passages.map((passage, index) => (
+      return passages.map((passage, index) => (
         <Passage key={index} passage={passage} />
       ));
     };
