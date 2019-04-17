@@ -8,29 +8,21 @@ import {
   SELECT_ANSWER_EVENT
 } from './actionTypes';
 
-export const checkAnswers = () => ({
+export const checkAnswers = questions => ({
   type: CHECK_ANSWERS,
-  isCheckComplete: true
+  questions
 });
 
 export const fetchTaskError = () => ({
-  type: FETCH_TASK_ERROR,
-  isLoading: false
+  type: FETCH_TASK_ERROR
 });
 
 export const fetchTaskRequested = () => ({
-  type: FETCH_TASK_REQUESTED,
-  isLoading: true
+  type: FETCH_TASK_REQUESTED
 });
 
-export const fetchTaskSuccess = (
-  chunkMap,
-  passageBox,
-  questions,
-  type
-) => ({
+export const fetchTaskSuccess = (chunkMap, passageBox, questions, type) => ({
   type: FETCH_TASK_SUCCESS,
-  isLoading: false,
   chunkMap,
   passageBox,
   questions,
@@ -42,8 +34,7 @@ export const initializeApplication = () => ({
 });
 
 export const selectAnswerComplete = () => ({
-  type: SELECT_ANSWER_COMPLETE,
-  isAnswerComplete: true
+  type: SELECT_ANSWER_COMPLETE
 });
 
 export const selectAnswerEvent = (questionId, choiceNumber) => ({

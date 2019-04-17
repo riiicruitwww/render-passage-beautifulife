@@ -11,7 +11,8 @@ import {
 
 const mapStateToProps = state => {
   return {
-    ...state.reducer,
+    ...state.content,
+    ...state.ui,
     ...state.router
   };
 };
@@ -40,8 +41,8 @@ const mapDispatchToProps = (dispatch, { history }) => {
         console.error(err.message);
       }
     },
-    onCheckClick: () => {
-      dispatch(checkAnswers());
+    onCheckClick: questionsFromContent => {
+      dispatch(checkAnswers(questionsFromContent));
     },
     onNextClick: () => {
       dispatch(initializeApplication());
@@ -54,9 +55,19 @@ const mapDispatchToProps = (dispatch, { history }) => {
   };
 };
 
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  return {
+    ...stateProps,
+    ...dispatchProps,
+    ...ownProps,
+    onCheckClick: () => dispatchProps.onCheckClick(stateProps.questions)
+  };
+};
+
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
+    mergeProps
   )(App)
 );

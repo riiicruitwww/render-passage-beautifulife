@@ -1,78 +1,13 @@
-import {
-  CHECK_ANSWERS,
-  FETCH_TASK_ERROR,
-  FETCH_TASK_REQUESTED,
-  FETCH_TASK_SUCCESS,
-  INITIALIZE_APPLICATION,
-  SELECT_ANSWER_COMPLETE,
-  SELECT_ANSWER_EVENT
-} from '../actions/actionTypes';
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
+import contentReducer from './contentReducer';
+import uiReducer from './uiReducer';
 
-export const initialState = {
-  isAnswerComplete: false,
-  isCheckComplete: false,
-  isLoading: false,
-  checkResult: {},
-  chunkMap: {},
-  passageBox: [],
-  questions: [],
-  packType: '',
-  userAnswer: {}
-};
+const createRootReducer = history =>
+  combineReducers({
+    content: contentReducer,
+    ui: uiReducer,
+    router: connectRouter(history)
+  });
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case CHECK_ANSWERS:
-      const checkResult = {};
-
-      state.questions.forEach(question => {
-        const isCorrect =
-          question.correct_answer === state.userAnswer[question.id];
-        checkResult[question.id] = {
-          isCorrect,
-          correctAnswer: question.correct_answer
-        };
-      });
-
-      return Object.assign({}, state, {
-        isCheckComplete: action.isCheckComplete,
-        checkResult
-      });
-
-    case FETCH_TASK_ERROR:
-    case FETCH_TASK_REQUESTED:
-      return Object.assign({}, state, {
-        isLoading: action.isLoading
-      });
-
-    case FETCH_TASK_SUCCESS:
-      return Object.assign({}, state, {
-        isLoading: action.isLoading,
-        chunkMap: action.chunkMap,
-        passageBox: action.passageBox,
-        questions: action.questions,
-        packType: action.packType
-      });
-
-    case INITIALIZE_APPLICATION:
-      return initialState;
-
-    case SELECT_ANSWER_COMPLETE:
-      return Object.assign({}, state, {
-        isAnswerComplete: action.isAnswerComplete
-      });
-
-    case SELECT_ANSWER_EVENT:
-      return Object.assign({}, state, {
-        userAnswer: {
-          ...state.userAnswer,
-          [action.questionId]: action.choiceNumber
-        }
-      });
-
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default createRootReducer;

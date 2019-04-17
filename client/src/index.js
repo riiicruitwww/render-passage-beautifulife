@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import {
   ConnectedRouter,
-  connectRouter,
   routerMiddleware
 } from 'connected-react-router';
-import reducer from './reducers';
+import createRootReducer from './reducers';
 import './index.scss';
 import AppContainer from './containers/AppContainer';
 import NotFound from './components/NotFound/NotFound';
@@ -22,10 +21,7 @@ const middlewares =
     : [routerMiddleware(history)];
 
 const store = createStore(
-  combineReducers({
-    reducer,
-    router: connectRouter(history)
-  }),
+  createRootReducer(history),
   compose(applyMiddleware(...middlewares))
 );
 

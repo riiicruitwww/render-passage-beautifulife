@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Question from '../components/Question/Question';
 
 const mapStateToProps = (state, { question }) => {
-  const { checkResult, isCheckComplete } = state.reducer;
+  const { checkResult, isCheckComplete } = state.ui;
   const questionType = !isCheckComplete ? '' : 
     checkResult[question.id].isCorrect ? 'correct' : 'wrong';
 
