@@ -23,7 +23,6 @@ describe('Header', () => {
     });
 
     it('two buttons rendered', () => {
-      expect(wrapper.find('.Header__back-btn').length).toBe(1);
       expect(wrapper.find('.Header__utility-btn').length).toBe(1);
     });
 

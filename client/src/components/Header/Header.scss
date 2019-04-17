@@ -32,18 +32,6 @@
     transition: all 0.3s;
   }
 
-  &__back-btn {
-    left: 0;
-    margin-left: 16px;
-    color: #e0e0e0;
-    opacity: 0.7;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
   &__utility-btn {
     right: 0;
     margin-right: 16px;

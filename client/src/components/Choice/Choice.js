@@ -12,8 +12,8 @@ const Choice = ({
   onComplete,
   onSelect
 }) => {
-  const handleChoiceClick = choiceNumber => {
-    onSelect(questionId, choiceNumber);
+  const handleChoiceClick = () => {
+    onSelect(questionId, number);
 
     if (
       questionsLength === Object.keys(userAnswer).length + 1 &&
@@ -32,7 +32,7 @@ const Choice = ({
   return (
     <div
       className={`Choice ${choiceType}`}
-      onClick={handleChoiceClick.bind(null, number)}
+      onClick={handleChoiceClick}
     >
       <span className="Choice__number">{`(${number})`}</span>
       {renderChoice()}

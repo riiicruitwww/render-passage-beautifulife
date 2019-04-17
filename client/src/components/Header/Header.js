@@ -15,25 +15,16 @@ const Header = ({
     }
   };
 
-  const handleLogoClick = () => {
-    onHomeClick();
-  };
-
-  const handleNextClick = () => {
-    onNextClick();
-  };
-
   return (
     <div className="Header">
       <div className="Header__title">
-        <h1 onClick={handleLogoClick}>Santa Toeic</h1>
+        <h1 onClick={onHomeClick}>Santa Toeic</h1>
         <span>{`(${packType || '...Loading'})`}</span>
       </div>
-      <button className="Header__back-btn">돌아가기</button>
       {isCheckComplete ? (
         <button
           className="Header__utility-btn active"
-          onClick={handleNextClick}
+          onClick={onNextClick}
         >
           다음문제
         </button>
