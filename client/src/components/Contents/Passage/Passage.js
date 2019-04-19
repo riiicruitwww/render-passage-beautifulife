@@ -14,7 +14,7 @@ const Passage = ({ passage }) => {
 Passage.propTypes = {
   passage: PropTypes.shape({
     view_tree: PropTypes.instanceOf(Object).isRequired
-  }).isRequired,
+  }).isRequired
 };
 
 export default Passage;

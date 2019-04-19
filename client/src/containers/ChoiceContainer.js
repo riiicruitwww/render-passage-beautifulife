@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Choice } from 'Contents';
 import { selectAnswerComplete, selectAnswerEvent } from 'actions';
-import charCodeToNum  from 'utils/charCodeToNum';
+import charCodeToNum from 'utils/charCodeToNum';
 
 const mapStateToProps = (state, { choice, questionId }) => {
   const number = charCodeToNum(choice.number);

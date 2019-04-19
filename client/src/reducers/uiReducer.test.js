@@ -4,7 +4,7 @@ import {
   INITIALIZE_APPLICATION,
   SELECT_ANSWER_COMPLETE,
   SELECT_ANSWER_EVENT
-} from '../actions/actionTypes';
+} from 'actions/actionTypes';
 
 describe('uiReducer validate', () => {
   it('initial state validate', () => {

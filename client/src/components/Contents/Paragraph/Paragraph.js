@@ -19,7 +19,7 @@ const Paragraph = ({ paragraph }) => {
 Paragraph.propTypes = {
   paragraph: PropTypes.shape({
     children: PropTypes.array.isRequired
-  }).isRequired,
+  }).isRequired
 };
 
 export default Paragraph;

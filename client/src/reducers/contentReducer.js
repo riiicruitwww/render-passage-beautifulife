@@ -3,7 +3,7 @@ import {
   FETCH_TASK_REQUESTED,
   FETCH_TASK_SUCCESS,
   INITIALIZE_APPLICATION
-} from '../actions/actionTypes';
+} from 'actions/actionTypes';
 
 export const initialState = {
   isLoading: false,
