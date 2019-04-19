@@ -1,58 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component about render compare with snapshot 1`] = `
+exports[`Question about render compare with snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App
-    location={
+  Symbol(enzyme.__unrendered__): <Question
+    question={
       Object {
-        "pathname": "test",
+        "order": 0,
       }
-    }
-    onInit={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            "test",
-          ],
-          Array [
-            "test",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    passageBox={
-      Object {
-        "passage_translations": Array [
-          "test",
-        ],
-        "passages": Array [
-          "test",
-        ],
-        "view_tree": Object {
-          "children": Array [
-            "test",
-          ],
-        },
-        "vocabularies": Array [
-          "test",
-        ],
-      }
-    }
-    questions={
-      Array [
-        "test",
-      ]
     }
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -70,45 +25,67 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
+        <span
+          className="Question__order undefined"
+        >
+          1
+          .
+        </span>,
         <div
-          className="App__body"
-        />,
-        undefined,
+          className="Question__choice-area"
+        >
+          <WithRenderPropertyByName />
+        </div>,
       ],
-      "className": "App",
+      "className": "Question",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "isAnswerComplete": undefined,
-          "isCheckComplete": undefined,
-          "onCheckClick": undefined,
-          "onHomeClick": undefined,
-          "onNextClick": undefined,
-          "packType": undefined,
+          "children": Array [
+            1,
+            ".",
+            false,
+            false,
+          ],
+          "className": "Question__order undefined",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          1,
+          ".",
+          false,
+          false,
+        ],
+        "type": "span",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
-          "className": "App__body",
+          "children": <WithRenderPropertyByName />,
+          "className": "Question__choice-area",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "property": undefined,
+            "questionId": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         "type": "div",
       },
-      undefined,
     ],
     "type": "div",
   },
@@ -119,45 +96,67 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
+          <span
+            className="Question__order undefined"
+          >
+            1
+            .
+          </span>,
           <div
-            className="App__body"
-          />,
-          undefined,
+            className="Question__choice-area"
+          >
+            <WithRenderPropertyByName />
+          </div>,
         ],
-        "className": "App",
+        "className": "Question",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "isAnswerComplete": undefined,
-            "isCheckComplete": undefined,
-            "onCheckClick": undefined,
-            "onHomeClick": undefined,
-            "onNextClick": undefined,
-            "packType": undefined,
+            "children": Array [
+              1,
+              ".",
+              false,
+              false,
+            ],
+            "className": "Question__order undefined",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [
+            1,
+            ".",
+            false,
+            false,
+          ],
+          "type": "span",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
-            "className": "App__body",
+            "children": <WithRenderPropertyByName />,
+            "className": "Question__choice-area",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "property": undefined,
+              "questionId": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": "div",
         },
-        undefined,
       ],
       "type": "div",
     },
@@ -186,6 +185,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;

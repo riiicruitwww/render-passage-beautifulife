@@ -6,24 +6,12 @@ describe('Header', () => {
   describe('about render', () => {
     let wrapper;
 
-    beforeEach(() => {
+    beforeAll(() => {
       wrapper = shallow(<Header />);
     });
 
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
-    });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Header').length).toBe(1);
-    });
-
-    it('title rendered', () => {
-      expect(wrapper.find('.Header__title').length).toBe(1);
-    });
-
-    it('two buttons rendered', () => {
-      expect(wrapper.find('.Header__utility-btn').length).toBe(1);
     });
 
     it('utility-btn active when isAnserComplete is true', () => {
@@ -47,14 +35,14 @@ describe('Header', () => {
   });
 
   describe('about event handlers', () => {
-    let wrapper;
     const props = {
       onCheckClick: jest.fn(),
       onHomeClick: jest.fn(),
       onNextClick: jest.fn()
     };
+    let wrapper;
 
-    beforeEach(() => {
+    beforeAll(() => {
       wrapper = shallow(<Header {...props} />);
     });
 

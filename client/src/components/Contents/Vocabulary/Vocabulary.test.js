@@ -15,9 +15,5 @@ describe('Vocabulary', () => {
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Vocabulary').length).toBe(1);
-    });
   });
 });

@@ -1,16 +1,22 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
-import { Loader } from 'Base';
+import { Divider, Loader } from 'Base';
+import { Paragraph, Passage, Vocabulary } from 'Contents';
 import { ContentsBox } from 'Template';
-
-App.prototype.renderPassageBox = jest.fn();
-App.prototype.renderPassageTranslations = jest.fn();
-App.prototype.renderQuestions = jest.fn();
-App.prototype.renderVocabularies = jest.fn();
+import QuestionContainer from 'containers/QuestionContainer';
 
 describe('App component', () => {
   const props = {
+    passageBox: {
+      view_tree: {
+        children: ['test']
+      },
+      passages: ['test'],
+      passage_translations: ['test'],
+      vocabularies: ['test']
+    },
+    questions: ['test'],
     location: {
       pathname: 'test'
     },
@@ -27,10 +33,6 @@ describe('App component', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('component rendered', () => {
-      expect(wrapper.find('.App').length).toBe(1);
-    });
-
     it('Loader component rendered when isLoading is true', () => {
       wrapper.setProps({ isLoading: true });
       expect(wrapper.find(Loader).length).toBe(1);
@@ -42,9 +44,21 @@ describe('App component', () => {
         expect(wrapper.find(ContentsBox).length).toBe(2);
       });
 
+      it('Paragraph and Passage and Question Component rendered', () => {
+        expect(wrapper.exists(Paragraph)).toBe(true);
+        expect(wrapper.exists(Passage)).toBe(true);
+        expect(wrapper.exists(QuestionContainer)).toBe(true);
+      });
+
       it('two ContentsBox components rendered when isCheckComplete true', () => {
         wrapper.setProps({ isCheckComplete: true });
         expect(wrapper.find(ContentsBox).length).toBe(2);
+      });
+
+      it('Passage and Vocabulary and Divider Component rendered', () => {
+        expect(wrapper.exists(Passage)).toBe(true);
+        expect(wrapper.exists(Vocabulary)).toBe(true);
+        expect(wrapper.find(Divider).length).toBe(2);
       });
     });
   });
@@ -71,7 +85,7 @@ describe('App component', () => {
         },
         onInit: jest.fn()
       };
-      const wrapper = mount(<App {...props} />);
+      const wrapper = shallow(<App {...props} />);
 
       expect(props.onInit).toHaveBeenCalledTimes(1);
     });

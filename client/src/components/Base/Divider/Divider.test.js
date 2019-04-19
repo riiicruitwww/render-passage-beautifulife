@@ -9,9 +9,5 @@ describe('Divider', () => {
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Divider').length).toBe(1);
-    });
   });
 });

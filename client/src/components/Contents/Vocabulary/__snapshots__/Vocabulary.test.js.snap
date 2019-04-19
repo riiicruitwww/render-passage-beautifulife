@@ -1,58 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component about render compare with snapshot 1`] = `
+exports[`Vocabulary about render compare with snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App
-    location={
+  Symbol(enzyme.__unrendered__): <Vocabulary
+    vocabulary={
       Object {
-        "pathname": "test",
+        "meaning": "test",
+        "word": "test",
       }
-    }
-    onInit={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            "test",
-          ],
-          Array [
-            "test",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    passageBox={
-      Object {
-        "passage_translations": Array [
-          "test",
-        ],
-        "passages": Array [
-          "test",
-        ],
-        "view_tree": Object {
-          "children": Array [
-            "test",
-          ],
-        },
-        "vocabularies": Array [
-          "test",
-        ],
-      }
-    }
-    questions={
-      Array [
-        "test",
-      ]
     }
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -70,47 +26,54 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
-        <div
-          className="App__body"
-        />,
-        undefined,
+        <span
+          className="Vocabulary__word"
+        >
+          test
+          :
+        </span>,
+        <span
+          className="Vocabulary__meaning"
+        >
+          test
+        </span>,
       ],
-      "className": "App",
+      "className": "Vocabulary",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "isAnswerComplete": undefined,
-          "isCheckComplete": undefined,
-          "onCheckClick": undefined,
-          "onHomeClick": undefined,
-          "onNextClick": undefined,
-          "packType": undefined,
+          "children": Array [
+            "test",
+            ":",
+          ],
+          "className": "Vocabulary__word",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          "test",
+          ":",
+        ],
+        "type": "span",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
-          "className": "App__body",
+          "children": "test",
+          "className": "Vocabulary__meaning",
         },
         "ref": null,
-        "rendered": null,
-        "type": "div",
+        "rendered": "test",
+        "type": "span",
       },
-      undefined,
     ],
-    "type": "div",
+    "type": "span",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -119,47 +82,54 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
-          <div
-            className="App__body"
-          />,
-          undefined,
+          <span
+            className="Vocabulary__word"
+          >
+            test
+            :
+          </span>,
+          <span
+            className="Vocabulary__meaning"
+          >
+            test
+          </span>,
         ],
-        "className": "App",
+        "className": "Vocabulary",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "isAnswerComplete": undefined,
-            "isCheckComplete": undefined,
-            "onCheckClick": undefined,
-            "onHomeClick": undefined,
-            "onNextClick": undefined,
-            "packType": undefined,
+            "children": Array [
+              "test",
+              ":",
+            ],
+            "className": "Vocabulary__word",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [
+            "test",
+            ":",
+          ],
+          "type": "span",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
-            "className": "App__body",
+            "children": "test",
+            "className": "Vocabulary__meaning",
           },
           "ref": null,
-          "rendered": null,
-          "type": "div",
+          "rendered": "test",
+          "type": "span",
         },
-        undefined,
       ],
-      "type": "div",
+      "type": "span",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -186,6 +156,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;

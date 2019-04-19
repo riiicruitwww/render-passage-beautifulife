@@ -21,9 +21,5 @@ describe('Chunk', () => {
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Chunk').length).toBe(1);
-    });
   });
 });

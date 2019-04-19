@@ -9,9 +9,5 @@ describe('Loader', () => {
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Loader').length).toBe(1);
-    });
   });
 });

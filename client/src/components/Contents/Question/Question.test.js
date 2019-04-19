@@ -14,9 +14,5 @@ describe('Question', () => {
     it('compare with snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    it('component rendered', () => {
-      expect(wrapper.find('.Question').length).toBe(1);
-    });
   });
 });

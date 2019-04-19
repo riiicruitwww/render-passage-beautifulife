@@ -1,60 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component about render compare with snapshot 1`] = `
+exports[`Loader about render compare with snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App
-    location={
-      Object {
-        "pathname": "test",
-      }
-    }
-    onInit={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            "test",
-          ],
-          Array [
-            "test",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    passageBox={
-      Object {
-        "passage_translations": Array [
-          "test",
-        ],
-        "passages": Array [
-          "test",
-        ],
-        "view_tree": Object {
-          "children": Array [
-            "test",
-          ],
-        },
-        "vocabularies": Array [
-          "test",
-        ],
-      }
-    }
-    questions={
-      Array [
-        "test",
-      ]
-    }
-  />,
+  Symbol(enzyme.__unrendered__): <Loader />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -70,45 +19,39 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
         <div
-          className="App__body"
+          className="Loader__circle1"
         />,
-        undefined,
+        <div
+          className="Loader__circle2"
+        />,
       ],
-      "className": "App",
+      "className": "Loader",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "isAnswerComplete": undefined,
-          "isCheckComplete": undefined,
-          "onCheckClick": undefined,
-          "onHomeClick": undefined,
-          "onNextClick": undefined,
-          "packType": undefined,
+          "className": "Loader__circle1",
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
-          "className": "App__body",
+          "className": "Loader__circle2",
         },
         "ref": null,
         "rendered": null,
         "type": "div",
       },
-      undefined,
     ],
     "type": "div",
   },
@@ -119,45 +62,39 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
           <div
-            className="App__body"
+            className="Loader__circle1"
           />,
-          undefined,
+          <div
+            className="Loader__circle2"
+          />,
         ],
-        "className": "App",
+        "className": "Loader",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "isAnswerComplete": undefined,
-            "isCheckComplete": undefined,
-            "onCheckClick": undefined,
-            "onHomeClick": undefined,
-            "onNextClick": undefined,
-            "packType": undefined,
+            "className": "Loader__circle1",
           },
           "ref": null,
           "rendered": null,
-          "type": [Function],
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
-            "className": "App__body",
+            "className": "Loader__circle2",
           },
           "ref": null,
           "rendered": null,
           "type": "div",
         },
-        undefined,
       ],
       "type": "div",
     },
@@ -186,6 +123,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
