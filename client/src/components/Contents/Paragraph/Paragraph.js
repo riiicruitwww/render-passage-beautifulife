@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ChunkContainer from 'containers/ChunkContainer';
 
 const Paragraph = ({ paragraph }) => {
@@ -13,6 +14,12 @@ const Paragraph = ({ paragraph }) => {
       {renderParagraph()}
     </p>
   );
+};
+
+Paragraph.propTypes = {
+  paragraph: PropTypes.shape({
+    children: PropTypes.array.isRequired
+  }).isRequired,
 };
 
 export default Paragraph;

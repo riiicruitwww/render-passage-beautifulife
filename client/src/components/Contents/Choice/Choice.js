@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Choice.scss';
 import { Paragraph } from 'Contents';
 
@@ -35,6 +36,19 @@ const Choice = ({
       {renderChoice()}
     </div>
   );
+};
+
+Choice.propTypes = {
+  choice: PropTypes.shape({
+    children: PropTypes.array.isRequired
+  }).isRequired,
+  choiceType: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  questionId: PropTypes.number.isRequired,
+  questionsLength: PropTypes.number.isRequired,
+  userAnswer: PropTypes.objectOf(PropTypes.string).isRequired,
+  onComplete: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired
 };
 
 export default Choice;

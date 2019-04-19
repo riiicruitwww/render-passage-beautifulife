@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import './Chunk.scss';
 
 const Chunk = ({ chunk: { children, chunk_id, type }, chunkMap }) => {
@@ -35,6 +36,17 @@ const Chunk = ({ chunk: { children, chunk_id, type }, chunkMap }) => {
   };
 
   return <Fragment>{renderChunk()}</Fragment>;
+};
+
+Chunk.propTypes = {
+  chunk: PropTypes.shape({
+    children: PropTypes.array.isRequired,
+    chunk_id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired
+  }).isRequired,
+  chunkMap: PropTypes.objectOf(
+    PropTypes.instanceOf(Object).isRequired
+  ).isRequired
 };
 
 export default Chunk;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ChoiceContainer from 'containers/ChoiceContainer';
 import { Paragraph } from 'Contents';
 
@@ -30,6 +31,13 @@ const WithRenderPropertyByName = ({ property, questionId }) => {
   };
 
   return renderPropertyByName(property);
+};
+
+WithRenderPropertyByName.propTypes = {
+  property: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired,
+  questionId: PropTypes.number
 };
 
 export default WithRenderPropertyByName;

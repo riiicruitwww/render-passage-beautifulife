@@ -1,12 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import './App.scss';
 import { Divider, Loader } from 'Base';
-import {
-  Paragraph,
-  Passage,
-  Vocabulary
-} from 'Contents'
-import {ContentsBox, Header } from 'Template';
+import { Paragraph, Passage, Vocabulary } from 'Contents';
+import { ContentsBox, Header } from 'Template';
 import QuestionContainer from 'containers/QuestionContainer';
 
 class App extends Component {
@@ -110,5 +107,19 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  isAnswerComplete: PropTypes.bool.isRequired,
+  isCheckComplete: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  packType: PropTypes.string.isRequired,
+  passageBox: PropTypes.instanceOf(Object).isRequired,
+  questions: PropTypes.instanceOf(Array).isRequired,
+  location: PropTypes.instanceOf(Object).isRequired,
+  onCheckClick: PropTypes.func.isRequired,
+  onNextClick: PropTypes.func.isRequired,
+  onInit: PropTypes.func.isRequired,
+  onHomeClick: PropTypes.func.isRequired
+};
 
 export default App;

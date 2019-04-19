@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Question.scss';
 import { WithRenderPropertyByName } from 'Contents';
 
@@ -23,6 +24,15 @@ const Question = ({ questionType, question: { id, order, view_tree } }) => {
       </div>
     </div>
   );
+};
+
+Question.propTypes = {
+  questionType: PropTypes.string.isRequired,
+  question: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    order: PropTypes.number.isRequired,
+    view_tree: PropTypes.instanceOf(Object).isRequired
+  }).isRequired
 };
 
 export default Question;
