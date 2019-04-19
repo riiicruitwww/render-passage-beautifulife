@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import App from '../components/App/App';
+import App from 'App';
 import {
   checkAnswers,
   fetchTaskError,
   fetchTaskRequested,
   fetchTaskSuccess,
   initializeApplication
-} from '../actions';
+} from 'actions';
 
 const mapStateToProps = state => {
   return {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
-import Loader from '../Loader/Loader';
-import ContentsBox from '../ContentsBox/ContentsBox';
+import { Loader } from 'Base';
+import { ContentsBox } from 'Template';
 
 App.prototype.renderPassageBox = jest.fn();
 App.prototype.renderPassageTranslations = jest.fn();

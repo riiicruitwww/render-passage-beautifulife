@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import './App.scss';
-import ContentsBox from '../ContentsBox/ContentsBox';
-import Divider from '../Divider/Divider';
-import Header from '../Header/Header';
-import Loader from '../Loader/Loader';
-import Paragraph from '../Paragraph/Paragraph';
-import Passage from '../Passage/Passage';
-import QuestionContainer from '../../containers/QuestionContainer';
-import Vocabulary from '../Vocabulary/Vocabulary';
+import { Divider, Loader } from 'Base';
+import {
+  Paragraph,
+  Passage,
+  Vocabulary
+} from 'Contents'
+import {ContentsBox, Header } from 'Template';
+import QuestionContainer from 'containers/QuestionContainer';
 
 class App extends Component {
   componentDidMount() {

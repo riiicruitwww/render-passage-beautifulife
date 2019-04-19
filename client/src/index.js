@@ -5,14 +5,11 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import {
-  ConnectedRouter,
-  routerMiddleware
-} from 'connected-react-router';
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 import createRootReducer from './reducers';
 import './index.scss';
 import AppContainer from './containers/AppContainer';
-import NotFound from './components/NotFound/NotFound';
+import NotFound from 'NotFound';
 
 const history = createBrowserHistory();
 const middlewares =

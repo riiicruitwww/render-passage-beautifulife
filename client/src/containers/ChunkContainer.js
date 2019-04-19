@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Chunk from '../components/Chunk/Chunk';
+import { Chunk } from 'Contents';
 
 const mapStateToProps = state => {
   return { chunkMap: state.content.chunkMap };

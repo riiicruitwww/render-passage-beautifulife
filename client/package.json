@@ -14,9 +14,9 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -29,10 +29,26 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-plugin-module-resolver": "^3.2.0",
+    "customize-cra": "^0.2.12",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "node-sass": "^4.11.0",
+    "react-app-rewired": "^2.1.1",
     "redux-logger": "^3.0.6"
   },
-  "proxy": "http://localhost:80"
+  "proxy": "http://localhost:80",
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "modulePaths": ["<rootDir>/src"],
+    "moduleNameMapper": {
+      "^App": "<rootDir>/src/components/App/App",
+      "^Base": "<rootDir>/src/components/Base",
+      "^Contents": "<rootDir>/src/components/Contents",
+      "^NotFound": "<rootDir>/src/components/NotFound/NotFound",
+      "^Template": "<rootDir>/src/components/Template"
+    }
+  }
 }

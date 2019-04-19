@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import Choice from '../components/Choice/Choice';
-import { selectAnswerComplete, selectAnswerEvent } from '../actions';
+import { Choice } from 'Contents';
+import { selectAnswerComplete, selectAnswerEvent } from 'actions';
+import charCodeToNum  from 'utils/charCodeToNum';
 
 const mapStateToProps = (state, { choice, questionId }) => {
-  const number = String.fromCharCode(97 + choice.number);
+  const number = charCodeToNum(choice.number);
   const isSelected = state.ui.userAnswer[questionId] === number;
   let choiceType = isSelected ? 'selected' : '';
 

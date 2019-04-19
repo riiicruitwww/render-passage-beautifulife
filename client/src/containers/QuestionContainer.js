@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Question from '../components/Question/Question';
+import { Question } from 'Contents';
 
 const mapStateToProps = (state, { question }) => {
   const { checkResult, isCheckComplete } = state.ui;
